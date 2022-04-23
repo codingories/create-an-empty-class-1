@@ -4,7 +4,7 @@ on:
     branches:
       - master # 当master分支有变更，则执行以下jobs操作
 jobs:
-  run_test:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
