@@ -1,4 +1,4 @@
-name: Vue project Build and Deploy
+name: test
 on:
   pull_request:
     branches:
