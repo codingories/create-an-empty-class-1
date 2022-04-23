@@ -26,13 +26,23 @@ on:
 #          issue-message: "Hey, thank you for opening your first Issue ! 🙂"
 #          pr-message: "Hey, thank you for opening your Pull Request !"
 
+#jobs:
+#  welcome:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: EddieHubCommunity/gh-action-community/src/welcome@main
+#        with:
+#          github-token: ${{ secrets.GITHUB_TOKEN }}
+#          issue-message: "It's great to have your input on this project."
+#          pr-message: "Thank you for contributing to this project, your support is much appreciated."
+#          footer: "Stay awesome!"
+
 jobs:
-  welcome:
+  automerge:
     runs-on: ubuntu-latest
     steps:
-      - uses: EddieHubCommunity/gh-action-community/src/welcome@main
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          issue-message: "It's great to have your input on this project."
-          pr-message: "Thank you for contributing to this project, your support is much appreciated."
-          footer: "Stay awesome!"
+      - id: automerge
+        name: automerge
+        uses: "pascalgn/automerge-action@v0.15.2"
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
